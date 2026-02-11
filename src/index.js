@@ -19,17 +19,20 @@ import './index.css';
 
 const books = [
   {
+    id: 1,
     img: "https://m.media-amazon.com/images/I/71i9TStgFaL._AC_UY327_FMwebp_QL65_.jpg",
     title: "Little Men",
     author: "Louise Nay",
   },
 
   {
+    id: 2,
     title: "Little Women",
     author: "Louisa May Alcott",
     img: "https://m.media-amazon.com/images/I/71i9TStgFaL._AC_UY327_FMwebp_QL65_.jpg",
   },
   {
+    id:3,
     title: "Little Women",
     author: "Louisa May Alcott",
     img: "https://m.media-amazon.com/images/I/71i9TStgFaL._AC_UY327_FMwebp_QL65_.jpg",
@@ -40,9 +43,9 @@ const books = [
 export function BookList() {
   return (
     <section className="booklist">
-      {books.map((book) => {
+      {books.map((book, index) => {
         return  (
-      <Book book={book}></Book>
+      <Book key={book.id} {...book}></Book>
     )
       
       })}
@@ -50,9 +53,8 @@ export function BookList() {
   ); 
 }
 
-const Book = (props) => {
-  const {img, title, author} = props.book;
-
+const Book = ({img, title, author}) => {
+  // const {img, title, author} = props.book;
   return (
     <article className="book">
       <img src={img} alt="" />
