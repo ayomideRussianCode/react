@@ -55,16 +55,27 @@ export function BookList() {
 
 const Book = ({img, title, author}) => {
   // const {img, title, author} = props.book;
-  return (
-    <article className="book">
-      <img src={img} alt="" />
-          <h4>
-            {title}
-          </h4>
-          <h5 >
-            {author}
-          </h5>
 
+  const clickHandler = () => {
+    alert("Hello Baby");
+  };
+
+  const complexExample = (author) => {
+    console.log(author);
+  }
+  return (
+    <article className="book" onMouseOver={() =>{
+      console.log(title)
+    }}>
+      <img src={img} alt="" />
+      <h4 onClick={() => console.log(title)}>{title}</h4>
+      <h5>{author}</h5>
+      <button type="button" onClick={clickHandler}>
+        reference example
+      </button>
+      <button type="button" onClick={() => complexExample(author)}>
+        more complex example 
+      </button>
     </article>
   );
 };
