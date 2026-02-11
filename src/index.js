@@ -17,17 +17,24 @@ import './index.css';
 //   );
 // }
 
-  const title = "Little Women";
-  const author = "Louisa May Alcott";
-  const img ="https://m.media-amazon.com/images/I/71i9TStgFaL._AC_UY327_FMwebp_QL65_.jpg";
+const firstBook = {
+  img: "https://m.media-amazon.com/images/I/71i9TStgFaL._AC_UY327_FMwebp_QL65_.jpg",
+  title: "Little Men",
+  author: "Louise Nay"
+}
 
+const secondBook = {
+   title : "Little Women",
+   author : "Louisa May Alcott",
+   img :"https://m.media-amazon.com/images/I/71i9TStgFaL._AC_UY327_FMwebp_QL65_.jpg"
+
+}
 
 export function BookList() {
   return (
     <section className="booklist">
-      <Book job="developer" />
-      <Book />
-      <Book />
+      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author} />
+      <Book img={secondBook.img} title={secondBook.title} author={secondBook.author} />
     </section>
   );
 }
@@ -36,12 +43,12 @@ const Book = (props) => {
 
   return (
     <article className="book">
-      <img src={img} alt="" />
+      <img src={props.img} alt="" />
           <h4>
-            {title}
+            {props.title}
           </h4>
           <h5 style={{ color: "#617d98", fontSize: "0.7rem" }}>
-            {author}
+            {props.author}
           </h5>
     </article>
   );
