@@ -33,14 +33,18 @@ const secondBook = {
 export function BookList() {
   return (
     <section className="booklist">
-      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author} />
+      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author} >
+        <p>
+          lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, eqque!
+        </p> 
+      </Book>
       <Book img={secondBook.img} title={secondBook.title} author={secondBook.author} />
     </section>
   );
 }
 
-const Book = ({img, title, author}) => {
-  // const {img, title, author} = props;
+const Book = (props) => {
+  const {img, title, author, children} = props;
 
   return (
     <article className="book">
@@ -48,9 +52,11 @@ const Book = ({img, title, author}) => {
           <h4>
             {title}
           </h4>
-          <h5 style={{ color: "#617d98", fontSize: "0.7rem" }}>
+          <h5 >
             {author}
           </h5>
+          {props.children}
+
     </article>
   );
 };
