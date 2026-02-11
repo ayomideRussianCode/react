@@ -18,36 +18,40 @@ import './index.css';
 // }
 
 const books = [
- {
-  img: "https://m.media-amazon.com/images/I/71i9TStgFaL._AC_UY327_FMwebp_QL65_.jpg",
-  title: "Little Men",
-  author: "Louise Nay"
-},
+  {
+    img: "https://m.media-amazon.com/images/I/71i9TStgFaL._AC_UY327_FMwebp_QL65_.jpg",
+    title: "Little Men",
+    author: "Louise Nay",
+  },
 
- {
-   title : "Little Women",
-   author : "Louisa May Alcott",
-   img :"https://m.media-amazon.com/images/I/71i9TStgFaL._AC_UY327_FMwebp_QL65_.jpg"
-
-}
+  {
+    title: "Little Women",
+    author: "Louisa May Alcott",
+    img: "https://m.media-amazon.com/images/I/71i9TStgFaL._AC_UY327_FMwebp_QL65_.jpg",
+  },
+  {
+    title: "Little Women",
+    author: "Louisa May Alcott",
+    img: "https://m.media-amazon.com/images/I/71i9TStgFaL._AC_UY327_FMwebp_QL65_.jpg",
+  },
 ];
 
-const names = ['John', 'Peter', 'Susan'];
-const newNames = names.map((name) => {
- return <h2>{name}</h2>
-});
 
-console.log(newNames);
 export function BookList() {
   return (
     <section className="booklist">
-   {newNames}
+      {books.map((book) => {
+        return  (
+      <Book book={book}></Book>
+    )
+      
+      })}
     </section>
-  );
+  ); 
 }
 
 const Book = (props) => {
-  const {img, title, author} = props;
+  const {img, title, author} = props.book;
 
   return (
     <article className="book">
