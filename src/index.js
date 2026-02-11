@@ -39,16 +39,17 @@ export function BookList() {
   );
 }
 
-const Book = (props) => {
+const Book = ({img, title, author}) => {
+  // const {img, title, author} = props;
 
   return (
     <article className="book">
-      <img src={props.img} alt="" />
+      <img src={img} alt="" />
           <h4>
-            {props.title}
+            {title}
           </h4>
           <h5 style={{ color: "#617d98", fontSize: "0.7rem" }}>
-            {props.author}
+            {author}
           </h5>
     </article>
   );
